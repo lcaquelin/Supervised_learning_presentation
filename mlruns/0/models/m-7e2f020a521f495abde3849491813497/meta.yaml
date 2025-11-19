@@ -1,0 +1,10 @@
+artifact_location: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/models/m-7e2f020a521f495abde3849491813497/artifacts
+creation_timestamp: 1763549984828
+experiment_id: '0'
+last_updated_timestamp: 1763549993253
+model_id: m-7e2f020a521f495abde3849491813497
+model_type: null
+name: lightgbm_model
+source_run_id: 5c9099f526e5468abee9851371f6cac7
+status: 2
+status_message: null

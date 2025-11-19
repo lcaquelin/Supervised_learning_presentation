@@ -8,3 +8,4 @@ numpy
 mlflow
 setuptools
 hyperopt
+lightgbm

@@ -1,0 +1,21 @@
+artifact_path: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/models/m-7e2f020a521f495abde3849491813497/artifacts
+flavors:
+  lightgbm:
+    code: null
+    data: model.pkl
+    lgb_version: 4.6.0
+    model_class: sklearn.multioutput.MultiOutputRegressor
+  python_function:
+    data: model.pkl
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.lightgbm
+    python_version: 3.13.7
+mlflow_version: 3.6.0
+model_id: m-7e2f020a521f495abde3849491813497
+model_size_bytes: 380713
+model_uuid: m-7e2f020a521f495abde3849491813497
+prompts: null
+run_id: 5c9099f526e5468abee9851371f6cac7
+utc_time_created: '2025-11-19 10:59:44.932254'
