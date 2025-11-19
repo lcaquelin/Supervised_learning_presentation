@@ -1,0 +1,90 @@
+dummy_regressor
+approved_conversion_mae
+MAE: 0.9216219315260911
+MSE: 3.2832191070705457
+R2: -0.0001585449374170711
+spent_on_conversion_ratio_mae
+MAE: 26.130580249270928
+MSE: 1454.9881283230409
+R2: -0.01378486937950818
+------------------------------
+linear_regressor
+approved_conversion_mae
+MAE: 0.767786366896609
+MSE: 1.9796104097000509
+R2: 0.39695640091618634
+spent_on_conversion_ratio_mae
+MAE: 16.154070481598904
+MSE: 789.162893082572
+R2: 0.4501388809234034
+------------------------------
+lasso_regressor
+approved_conversion_mae
+MAE: 0.759271830524769
+MSE: 2.034589947281447
+R2: 0.380208126580696
+spent_on_conversion_ratio_mae
+MAE: 14.68429023972873
+MSE: 712.8376358640866
+R2: 0.5033196522392365
+------------------------------
+polynomial_regressor
+approved_conversion_mae
+MAE: 0.8653309658650085
+MSE: 2.2938716146638947
+R2: 0.3012238228466826
+spent_on_conversion_ratio_mae
+MAE: 19.042648621389404
+MSE: 1228.6137687155713
+R2: 0.14394487158410685
+------------------------------
+lasso_polynomial_regressor
+approved_conversion_mae
+MAE: 0.7549920281776635
+MSE: 1.522696925630686
+R2: 0.5361447738167229
+spent_on_conversion_ratio_mae
+MAE: 15.121746332270023
+MSE: 987.737239524331
+R2: 0.3117792173970738
+------------------------------
+decision_tree_regressor
+approved_conversion_mae
+MAE: 0.9644312746932835
+MSE: 2.5848405024309575
+R2: 0.21258672312207028
+spent_on_conversion_ratio_mae
+MAE: 16.00627199477012
+MSE: 1311.9451157690166
+R2: 0.08588250176589829
+------------------------------
+random_forest_regressor
+approved_conversion_mae
+MAE: 0.818578754094038
+MSE: 1.7978556590982686
+R2: 0.4523238805053077
+spent_on_conversion_ratio_mae
+MAE: 13.769653175778588
+MSE: 800.8887050223667
+R2: 0.4419687450340787
+------------------------------
+gradient_boosting_regressor
+approved_conversion_mae
+MAE: 0.7706055651800663
+MSE: 1.6892561913367639
+R2: 0.4854062554900944
+spent_on_conversion_ratio_mae
+MAE: 13.885385349036527
+MSE: 759.0205251353974
+R2: 0.4711410292964868
+------------------------------
+kneighbors_regressor
+approved_conversion_mae
+MAE: 0.8524017467248908
+MSE: 2.378340611353712
+R2: 0.2754922508539164
+spent_on_conversion_ratio_mae
+MAE: 14.284900935407256
+MSE: 766.6563825660389
+R2: 0.4658206307466749
+------------------------------

@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/aba760ad1b644d4a93e7b924a845976c/artifacts
+end_time: 1763509412288
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: aba760ad1b644d4a93e7b924a845976c
+run_name: Gradient Boosting Regressor
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763509409606
+status: 3
+tags: []
+user_id: lilid

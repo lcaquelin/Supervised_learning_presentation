@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/9c2c5a34ac8648b88f45d1822b68b6d1/artifacts
+end_time: 1763510054003
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9c2c5a34ac8648b88f45d1822b68b6d1
+run_name: Dummy Regressor Baseline
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763510051106
+status: 3
+tags: []
+user_id: lilid

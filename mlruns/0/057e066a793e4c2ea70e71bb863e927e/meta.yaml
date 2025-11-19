@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/057e066a793e4c2ea70e71bb863e927e/artifacts
+end_time: 1763510397033
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 057e066a793e4c2ea70e71bb863e927e
+run_name: Linear Regression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763510394706
+status: 3
+tags: []
+user_id: lilid

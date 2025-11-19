@@ -1,0 +1,8 @@
+os
+pandas
+matplotlib
+seaborn
+squarify
+scikit-learn
+numpy
+mlflow

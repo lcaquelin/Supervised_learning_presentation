@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/38b339f987f947c1ae7f422fe0c6ee9c/artifacts
+end_time: 1763510219820
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 38b339f987f947c1ae7f422fe0c6ee9c
+run_name: Polynomial Regression (Degree 2)
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763510217084
+status: 3
+tags: []
+user_id: lilid

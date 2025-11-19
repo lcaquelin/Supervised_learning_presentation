@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/5a326ab62e8743f4a84a84bc88121b61/artifacts
+end_time: 1763510207469
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5a326ab62e8743f4a84a84bc88121b61
+run_name: KNeighbors Regressor
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763510201105
+status: 3
+tags: []
+user_id: lilid

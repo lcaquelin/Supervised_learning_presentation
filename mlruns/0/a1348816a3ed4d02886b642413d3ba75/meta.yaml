@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/a1348816a3ed4d02886b642413d3ba75/artifacts
+end_time: 1763508111979
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a1348816a3ed4d02886b642413d3ba75
+run_name: Polynomial Regression (Degree 2) with Lasso
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763508111168
+status: 3
+tags: []
+user_id: lilid

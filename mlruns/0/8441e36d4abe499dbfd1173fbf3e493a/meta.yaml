@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/8441e36d4abe499dbfd1173fbf3e493a/artifacts
+end_time: 1763510198423
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8441e36d4abe499dbfd1173fbf3e493a
+run_name: Random Forest Regressor
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763510195017
+status: 3
+tags: []
+user_id: lilid
