@@ -78,6 +78,9 @@ For each model, we calculate and visualize:
 ### Optimization Goal (Hyperopt)
 The hyperparameter tuning aims to maximize the **MAE** with **Hyperopt**, with a specific focus on the `spent_on_conversion_ratio` target.
 
+# Last minute adding
+We add a last minute named "script-last_minute_adding_model.py" that run **LightGBM** on the dataset encoded with the metrics MAE & RMSE.
+
 ## 📦 Requirements
 * Python 3.x
 * os
