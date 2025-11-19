@@ -1,8 +1,26 @@
 # Importing libraries
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 import os
+import numpy as np
+import mlflow
+
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.multioutput import MultiOutputRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.pipeline import Pipeline
+from sklearn.dummy import DummyRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Lasso
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.neighbors import KNeighborsRegressor
+from hyperopt import fmin, tpe, hp, STATUS_OK, Trials
+
 
 # Data pre-processing and main info
 ## Loading the data and general info
@@ -108,11 +126,6 @@ print(df.head())
 
 
 # Splitting the data set and defining the targets
-from sklearn.model_selection import train_test_split
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.pipeline import Pipeline
-import numpy as np
 
 # Define features (X) and targets (y)
 features = df[['age', 'gender', 'interest', 'Spent']]
@@ -192,11 +205,6 @@ mlflow.set_tracking_uri("mlruns")
 ### Subtask:
 # Train and evaluate a `MultiOutputRegressor` with a `DummyRegressor` as the baseline model, 
 # logging results with MLflow.
-
-from sklearn.multioutput import MultiOutputRegressor
-from sklearn.dummy import DummyRegressor
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-import numpy as np
 
 # Start an MLflow run for the Dummy Regressor
 with mlflow.start_run(run_name="Dummy Regressor Baseline"):
@@ -296,8 +304,6 @@ with mlflow.start_run(run_name="Dummy Regressor Baseline"):
 ### Subtask:
 # Train and evaluate a `LinearRegression` model, logging results with MLflow.
 
-from sklearn.linear_model import LinearRegression
-
 # Start an MLflow run for the Linear Regression model
 with mlflow.start_run(run_name="Linear Regression"):
     # Initialize the MultiOutputRegressor with a LinearRegression model
@@ -382,14 +388,6 @@ with mlflow.start_run(run_name="Linear Regression"):
     plt.show()
 
 ## 2.2. Linear regression - Lasso
-
-from sklearn.linear_model import Lasso
-from sklearn.multioutput import MultiOutputRegressor
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-import mlflow
 
 # Start an MLflow run for the Lasso Regression model
 with mlflow.start_run(run_name="Lasso Regression"):
@@ -483,9 +481,8 @@ with mlflow.start_run(run_name="Lasso Regression"):
 
 # The MLflow run is automatically ended when exiting the 'with' block
 
-## 3. Polynomial regression
 
-from sklearn.preprocessing import PolynomialFeatures
+## 3. Polynomial regression
 
 # Start an MLflow run for the Polynomial Regression model
 with mlflow.start_run(run_name="Polynomial Regression (Degree 2)"):
@@ -575,17 +572,8 @@ with mlflow.start_run(run_name="Polynomial Regression (Degree 2)"):
 
 # The MLflow run is automatically ended when exiting the 'with' block
 
-## 4. Polynomial regression - Lasso
 
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import Lasso
-from sklearn.multioutput import MultiOutputRegressor
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-import mlflow
-import os
+## 4. Polynomial regression - Lasso
 
 # Start an MLflow run for the Polynomial Regression with Lasso model
 with mlflow.start_run(run_name="Polynomial Regression (Degree 2) with Lasso"):
@@ -686,15 +674,8 @@ with mlflow.start_run(run_name="Polynomial Regression (Degree 2) with Lasso"):
 
 # The MLflow run is automatically ended when exiting the 'with' block
 
-## 5. Decision Tree
 
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.multioutput import MultiOutputRegressor
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-import mlflow
+## 5. Decision Tree
 
 # Start an MLflow run for the Decision Tree Regressor model
 with mlflow.start_run(run_name="Decision Tree Regressor"):
@@ -779,15 +760,8 @@ with mlflow.start_run(run_name="Decision Tree Regressor"):
 
 # The MLflow run is automatically ended when exiting the 'with' block
 
-## 6. Random forest
 
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.multioutput import MultiOutputRegressor
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-import mlflow
+## 6. Random forest
 
 # Start an MLflow run for the Random Forest Regressor model
 with mlflow.start_run(run_name="Random Forest Regressor"):
@@ -871,15 +845,8 @@ with mlflow.start_run(run_name="Random Forest Regressor"):
 
 # The MLflow run is automatically ended when exiting the 'with' block
 
-## 7. Gradient Boosting Tree
 
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.multioutput import MultiOutputRegressor
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-import mlflow
+## 7. Gradient Boosting Tree
 
 # Start an MLflow run for the Gradient Boosting Regressor model
 with mlflow.start_run(run_name="Gradient Boosting Regressor"):
@@ -966,14 +933,6 @@ with mlflow.start_run(run_name="Gradient Boosting Regressor"):
 
 ## 8. kNeighbor
 
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.multioutput import MultiOutputRegressor
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-import mlflow
-
 # Start an MLflow run for the KNeighbors Regressor model
 with mlflow.start_run(run_name="KNeighbors Regressor"):
     # Initialize the MultiOutputRegressor with a KNeighborsRegressor
@@ -1057,7 +1016,174 @@ with mlflow.start_run(run_name="KNeighbors Regressor"):
 
 # The MLflow run is automatically ended when exiting the 'with' block
 
+## 9. kNeighbor with Hyperopt
+# Set the MLflow tracking URI
+mlflow.set_tracking_uri("mlruns")
+print("Libraries imported and MLflow tracking URI set to 'mlruns'.")
 
+# Create an objective function that trains and evaluates for minimization of MAE.
+def objective(params):
+    n_neighbors = int(params['n_neighbors'])
+
+    with mlflow.start_run(run_name=f"KNeighbors Regressor Hyperopt (n_neighbors={n_neighbors})", nested=True) as run:
+        # Log hyperparameters
+        mlflow.log_param("n_neighbors", n_neighbors)
+
+        # Initialize the MultiOutputRegressor with KNeighborsRegressor
+        knn_regressor = MultiOutputRegressor(KNeighborsRegressor(n_neighbors=n_neighbors))
+
+        # Train the model
+        knn_regressor.fit(X_train_approved, y_train)
+
+        # Make predictions
+        y_pred = knn_regressor.predict(X_test_approved)
+
+        # Calculate metrics for Approved_Conversion
+        mae_approved = mean_absolute_error(y_test[:, 0], y_pred[:, 0])
+        mse_approved = mean_squared_error(y_test[:, 0], y_pred[:, 0])
+        r2_approved = r2_score(y_test[:, 0], y_pred[:, 0])
+
+        # Log metrics for Approved_Conversion
+        mlflow.log_metric("approved_conversion_mae", mae_approved)
+        mlflow.log_metric("approved_conversion_mse", mse_approved)
+        mlflow.log_metric("approved_conversion_r2", r2_approved)
+
+        # Calculate metrics for Spent_on_Conversion_Ratio
+        mae_ratio = mean_absolute_error(y_test[:, 1], y_pred[:, 1])
+        mse_ratio = mean_squared_error(y_test[:, 1], y_pred[:, 1])
+        r2_ratio = r2_score(y_test[:, 1], y_pred[:, 1])
+
+        # Log metrics for Spent_on_Conversion_Ratio
+        mlflow.log_metric("spent_on_conversion_ratio_mae", mae_ratio)
+        mlflow.log_metric("spent_on_conversion_ratio_mse", mse_ratio)
+        mlflow.log_metric("spent_on_conversion_ratio_r2", r2_ratio)
+
+        # Hyperopt minimizes the objective, so we return MAE for 'spent_on_conversion_ratio'
+        return {'loss': mae_ratio,
+                'status': STATUS_OK,
+                'run_id': run.info.run_id,
+                'n_neighbors': n_neighbors,
+                'mae_approved': mae_approved,
+                'mse_approved': mse_approved,
+                'r2_approved': r2_approved,
+                'mae_ratio': mae_ratio,
+                'mse_ratio': mse_ratio,
+                'r2_ratio': r2_ratio}
+
+print("Objective function 'objective' has been defined.")
+
+
+# Define the scope of research
+search_space = {
+    'n_neighbors': hp.quniform('n_neighbors', 1, 20, 1) # Integers from 1 to 20
+}
+print("Search space for 'n_neighbors' defined.")
+
+# Find the best parameter n_neighbors
+trials = Trials()
+best_run = fmin(
+    fn=objective,
+    space=search_space,
+    algo=tpe.suggest,
+    max_evals=20, # Number of different n_neighbors values to try
+    trials=trials
+)
+
+print("\nHyperopt optimization complete.")
+print(f"Best parameters found: {best_run}")
+
+# Retrieve the result of the search and launch a new trial
+best_trial = trials.best_trial['result']
+best_n_neighbors = int(best_trial['n_neighbors'])
+best_r2_ratio = best_trial['r2_ratio']
+best_mae_ratio = best_trial['mae_ratio']
+best_mse_ratio = best_trial['mse_ratio']
+best_r2_approved = best_trial['r2_approved']
+best_mae_approved = best_trial['mae_approved']
+best_mse_approved = best_trial['mse_approved']
+best_run_id = best_trial['run_id'] # Store the run_id for the best trial
+
+print(f"\nBest n_neighbors: {best_n_neighbors}")
+print(f"Best Spent_on_Conversion_Ratio MAE: {best_mae_ratio:.4f}")
+print(f"Best Approved_Conversion R2: {best_r2_approved:.4f}")
+
+# Train and evaluate the final model with the best parameters
+with mlflow.start_run(run_name=f"KNeighbors Regressor Best Model (n_neighbors={best_n_neighbors})") as final_run:
+    mlflow.log_param("n_neighbors", best_n_neighbors)
+
+    final_knn_regressor = MultiOutputRegressor(KNeighborsRegressor(n_neighbors=best_n_neighbors))
+    final_knn_regressor.fit(X_train_approved, y_train)
+    y_pred_best = final_knn_regressor.predict(X_test_approved)
+
+    # Log metrics for the best model
+    mlflow.log_metric("approved_conversion_mae", best_mae_approved)
+    mlflow.log_metric("approved_conversion_mse", best_mse_approved)
+    mlflow.log_metric("approved_conversion_r2", best_r2_approved)
+
+    mlflow.log_metric("spent_on_conversion_ratio_mae", best_mae_ratio)
+    mlflow.log_metric("spent_on_conversion_ratio_mse", best_mse_ratio)
+    mlflow.log_metric("spent_on_conversion_ratio_r2", best_r2_ratio)
+
+    print(f"\nFinal Best KNeighbors Regressor Metrics (n_neighbors={best_n_neighbors}):")
+    print(f"  Approved_Conversion MAE: {best_mae_approved:.4f}")
+    print(f"  Approved_Conversion MSE: {best_mse_approved:.4f}")
+    print(f"  Approved_Conversion R2: {best_r2_approved:.4f}")
+    print(f"  Spent_on_Conversion_Ratio MAE: {best_mae_ratio:.4f}")
+    print(f"  Spent_on_Conversion_Ratio MSE: {best_mse_ratio:.4f}")
+    print(f"  Spent_on_Conversion_Ratio R2: {best_r2_ratio:.4f}")
+
+    # Update score.txt with best model metrics
+    with open('out/score.txt', 'a') as f:
+        f.write(f"kneighbors_regressor_tuned (n_neighbors={best_n_neighbors})\n")
+        f.write(" " * 30 + "\n")
+        f.write(f"approved_conversion_mae\n")
+        f.write(f"MAE: {best_mae_approved}\n")
+        f.write(f"MSE: {best_mse_approved}\n")
+        f.write(f"R2: {best_r2_approved}\n")
+        f.write(" " * 30 + "\n")
+        f.write(f"spent_on_conversion_ratio_mae\n")
+        f.write(f"MAE: {best_mae_ratio}\n")
+        f.write(f"MSE: {best_mse_ratio}\n")
+        f.write(f"R2: {best_r2_ratio}\n")
+        f.write(" " * 30 + "\n")
+        f.write("-" * 30 + "\n")
+
+    print("\nFile out/score.txt updated with best KNeighbors Regressor metrics.")
+
+    # Visualize predictions vs. actual values for Approved_Conversion
+    plt.figure(figsize=(10, 6))
+    plt.scatter(y_test[:, 0], y_pred_best[:, 0], alpha=0.5)
+    plt.plot([y_test[:, 0].min(), y_test[:, 0].max()], [y_test[:, 0].min(), y_test[:, 0].max()], 'k--', lw=2)
+    plt.xlabel("Actual Approved Conversion")
+    plt.ylabel("Predicted Approved Conversion")
+    plt.title(f"Best KNeighbors Regressor (n_neighbors={best_n_neighbors}): Actual vs. Predicted Approved Conversion")
+    plt.grid(True)
+    plt.show()
+
+    # Visualize predictions vs. actual values for Spent_on_Conversion_Ratio
+    plt.figure(figsize=(10, 6))
+    plt.scatter(y_test[:, 1], y_pred_best[:, 1], alpha=0.5)
+    plt.plot([y_test[:, 1].min(), y_test[:, 1].max()], [y_test[:, 1].min(), y_test[:, 1].max()], 'k--', lw=2)
+    plt.xlabel("Actual Spent on Conversion Ratio")
+    plt.ylabel("Predicted Spent on Conversion Ratio")
+    plt.title(f"Best KNeighbors Regressor (n_neighbors={best_n_neighbors}): Actual vs. Predicted Spent on Conversion Ratio")
+    plt.grid(True)
+    plt.show()
+
+print(f"\nSummary of Hyperparameter Tuning for KNeighborsRegressor using Hyperopt:")
+print(f"Hyperopt was used to tune the 'n_neighbors' parameter for the KNeighborsRegressor model.")
+print(f"The search space for 'n_neighbors' was explored from 1 to 20.")
+print(f"The optimization aimed to minimize the MAE for 'Spent_on_Conversion_Ratio'.")
+print(f"The optimal 'n_neighbors' found was: {best_n_neighbors}")
+print(f"The final evaluation metrics for this best model are:")
+print(f"  Approved_Conversion:")
+print(f"    MAE: {best_mae_approved:.4f}")
+print(f"    MSE: {best_mse_approved:.4f}")
+print(f"    R2: {best_r2_approved:.4f}")
+print(f"  Spent_on_Conversion_Ratio:")
+print(f"    MAE: {best_mae_ratio:.4f}")
+print(f"    MSE: {best_mse_ratio:.4f}")
+print(f"    R2: {best_r2_ratio:.4f}")
 
 
 

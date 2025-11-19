@@ -88,6 +88,7 @@ The hyperparameter tuning aims to maximize the **MAE**, with a specific focus on
 * scikit-learn
 * numpy
 * mlflow
+* hyperopt
 
 ## 🚀 Usage
 1.  **Setup:** Ensure `KAG_conversion_data.csv` is in the project root.

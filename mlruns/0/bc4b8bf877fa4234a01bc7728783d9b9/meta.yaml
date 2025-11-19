@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/bc4b8bf877fa4234a01bc7728783d9b9/artifacts
+end_time: 1763516088670
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bc4b8bf877fa4234a01bc7728783d9b9
+run_name: KNeighbors Regressor Hyperopt (n_neighbors=18)
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763516088570
+status: 3
+tags: []
+user_id: lilid

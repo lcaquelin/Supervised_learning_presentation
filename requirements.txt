@@ -6,3 +6,5 @@ squarify
 scikit-learn
 numpy
 mlflow
+setuptools
+hyperopt
