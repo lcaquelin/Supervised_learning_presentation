@@ -75,8 +75,8 @@ For each model, we calculate and visualize:
 * **Metrics:** Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² Score.
 * **Visuals:** "Actual vs. Predicted" scatter plots with a diagonal reference line.
 
-### Optimization Goal
-The hyperparameter tuning aims to maximize the **MAE**, with a specific focus on the `spent_on_conversion_ratio` target.
+### Optimization Goal (Hyperopt)
+The hyperparameter tuning aims to maximize the **MAE** with **Hyperopt**, with a specific focus on the `spent_on_conversion_ratio` target.
 
 ## 📦 Requirements
 * Python 3.x
