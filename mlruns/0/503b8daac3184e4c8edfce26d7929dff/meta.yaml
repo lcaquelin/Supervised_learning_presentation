@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/503b8daac3184e4c8edfce26d7929dff/artifacts
+end_time: 1763511218969
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 503b8daac3184e4c8edfce26d7929dff
+run_name: Decision Tree Regressor
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763511216592
+status: 3
+tags: []
+user_id: lilid

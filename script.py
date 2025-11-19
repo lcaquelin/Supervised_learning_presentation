@@ -252,14 +252,17 @@ with mlflow.start_run(run_name="Dummy Regressor Baseline"):
     # Write to the 'score.txt' file
     with open('out/score.txt', 'w') as f:
         f.write(f"dummy_regressor\n")
+        f.write(" " * 30 + "\n")
         f.write(f"approved_conversion_mae\n")
         f.write(f"MAE: {mae_approved}\n")
         f.write(f"MSE: {mse_approved}\n")
-        f.write(f"R2: {r2_approved}\n")    
+        f.write(f"R2: {r2_approved}\n") 
+        f.write(" " * 30 + "\n")   
         f.write(f"spent_on_conversion_ratio_mae\n")
         f.write(f"MAE: {mae_ratio}\n")
         f.write(f"MSE: {mse_ratio}\n")
         f.write(f"R2: {r2_ratio}\n")
+        f.write(" " * 30 + "\n")
         f.write("-" * 30 + "\n")
 
     print("File out/score.txt has been created successfully.")
@@ -340,15 +343,19 @@ with mlflow.start_run(run_name="Linear Regression"):
 
     # Write to the 'score.txt' file
     with open('out/score.txt', 'a') as f:
+        f.write(" " * 30 + "\n")
         f.write(f"linear_regressor\n")
+        f.write(" " * 30 + "\n")
         f.write(f"approved_conversion_mae\n")
         f.write(f"MAE: {mae_approved}\n")
         f.write(f"MSE: {mse_approved}\n")
-        f.write(f"R2: {r2_approved}\n")    
+        f.write(f"R2: {r2_approved}\n") 
+        f.write(" " * 30 + "\n")   
         f.write(f"spent_on_conversion_ratio_mae\n")
         f.write(f"MAE: {mae_ratio}\n")
         f.write(f"MSE: {mse_ratio}\n")
         f.write(f"R2: {r2_ratio}\n")
+        f.write(" " * 30 + "\n")
         f.write("-" * 30 + "\n")
 
     print("File out/score.txt has been uploaded successfully.")
@@ -430,15 +437,19 @@ with mlflow.start_run(run_name="Lasso Regression"):
 
     # Write to the 'score.txt' file
     with open('out/score.txt', 'a') as f:
+        f.write(" " * 30 + "\n")
         f.write(f"lasso_regressor\n")
+        f.write(" " * 30 + "\n")
         f.write(f"approved_conversion_mae\n")
         f.write(f"MAE: {mae_approved}\n")
         f.write(f"MSE: {mse_approved}\n")
-        f.write(f"R2: {r2_approved}\n")    
+        f.write(f"R2: {r2_approved}\n") 
+        f.write(" " * 30 + "\n")   
         f.write(f"spent_on_conversion_ratio_mae\n")
         f.write(f"MAE: {mae_ratio}\n")
         f.write(f"MSE: {mse_ratio}\n")
         f.write(f"R2: {r2_ratio}\n")
+        f.write(" " * 30 + "\n")
         f.write("-" * 30 + "\n")
 
     print("File out/score.txt has been uploaded successfully.")
@@ -525,15 +536,19 @@ with mlflow.start_run(run_name="Polynomial Regression (Degree 2)"):
     
     # Write to the 'score.txt' file
     with open('out/score.txt', 'a') as f:
+        f.write(" " * 30 + "\n")
         f.write(f"polynomial_regressor\n")
+        f.write(" " * 30 + "\n")
         f.write(f"approved_conversion_mae\n")
         f.write(f"MAE: {mae_approved}\n")
         f.write(f"MSE: {mse_approved}\n")
-        f.write(f"R2: {r2_approved}\n")    
+        f.write(f"R2: {r2_approved}\n")   
+        f.write(" " * 30 + "\n") 
         f.write(f"spent_on_conversion_ratio_mae\n")
         f.write(f"MAE: {mae_ratio}\n")
         f.write(f"MSE: {mse_ratio}\n")
         f.write(f"R2: {r2_ratio}\n")
+        f.write(" " * 30 + "\n")
         f.write("-" * 30 + "\n")
     
     print("File out/score.txt has been uploaded successfully.")
@@ -626,15 +641,19 @@ with mlflow.start_run(run_name="Polynomial Regression (Degree 2) with Lasso"):
 
     # Write to the 'score.txt' file
     with open('out/score.txt', 'a') as f:
+        f.write(" " * 30 + "\n")
         f.write(f"lasso_polynomial_regressor\n")
+        f.write(" " * 30 + "\n")
         f.write(f"approved_conversion_mae\n")
         f.write(f"MAE: {mae_approved}\n")
         f.write(f"MSE: {mse_approved}\n")
         f.write(f"R2: {r2_approved}\n")    
+        f.write(" " * 30 + "\n")
         f.write(f"spent_on_conversion_ratio_mae\n")
         f.write(f"MAE: {mae_ratio}\n")
         f.write(f"MSE: {mse_ratio}\n")
         f.write(f"R2: {r2_ratio}\n")
+        f.write(" " * 30 + "\n")
         f.write("-" * 30 + "\n")
 
     print("File out/score.txt has been uploaded successfully.")
@@ -721,15 +740,19 @@ with mlflow.start_run(run_name="Decision Tree Regressor"):
 
     # Write to the 'score.txt' file
     with open('out/score.txt', 'a') as f:
+        f.write(" " * 30 + "\n")
         f.write(f"decision_tree_regressor\n")
+        f.write(" " * 30 + "\n")
         f.write(f"approved_conversion_mae\n")
         f.write(f"MAE: {mae_approved}\n")
         f.write(f"MSE: {mse_approved}\n")
-        f.write(f"R2: {r2_approved}\n")    
+        f.write(f"R2: {r2_approved}\n")  
+        f.write(" " * 30 + "\n")  
         f.write(f"spent_on_conversion_ratio_mae\n")
         f.write(f"MAE: {mae_ratio}\n")
         f.write(f"MSE: {mse_ratio}\n")
         f.write(f"R2: {r2_ratio}\n")
+        f.write(" " * 30 + "\n")
         f.write("-" * 30 + "\n")
 
     print("File out/score.txt has been uploaded successfully.")
@@ -809,15 +832,19 @@ with mlflow.start_run(run_name="Random Forest Regressor"):
 
     # Write to the 'score.txt' file
     with open('out/score.txt', 'a') as f:
+        f.write(" " * 30 + "\n")
         f.write(f"random_forest_regressor\n")
+        f.write(" " * 30 + "\n")
         f.write(f"approved_conversion_mae\n")
         f.write(f"MAE: {mae_approved}\n")
         f.write(f"MSE: {mse_approved}\n")
-        f.write(f"R2: {r2_approved}\n")    
+        f.write(f"R2: {r2_approved}\n")  
+        f.write(" " * 30 + "\n")  
         f.write(f"spent_on_conversion_ratio_mae\n")
         f.write(f"MAE: {mae_ratio}\n")
         f.write(f"MSE: {mse_ratio}\n")
         f.write(f"R2: {r2_ratio}\n")
+        f.write(" " * 30 + "\n")
         f.write("-" * 30 + "\n")
 
     print("File out/score.txt has been uploaded successfully.")
@@ -897,15 +924,19 @@ with mlflow.start_run(run_name="Gradient Boosting Regressor"):
 
     # Write to the 'score.txt' file
     with open('out/score.txt', 'a') as f:
+        f.write(" " * 30 + "\n")
         f.write(f"gradient_boosting_regressor\n")
+        f.write(" " * 30 + "\n")
         f.write(f"approved_conversion_mae\n")
         f.write(f"MAE: {mae_approved}\n")
         f.write(f"MSE: {mse_approved}\n")
-        f.write(f"R2: {r2_approved}\n")    
+        f.write(f"R2: {r2_approved}\n") 
+        f.write(" " * 30 + "\n")   
         f.write(f"spent_on_conversion_ratio_mae\n")
         f.write(f"MAE: {mae_ratio}\n")
         f.write(f"MSE: {mse_ratio}\n")
         f.write(f"R2: {r2_ratio}\n")
+        f.write(" " * 30 + "\n")
         f.write("-" * 30 + "\n")
 
     print("File out/score.txt has been uploaded successfully.")
@@ -986,15 +1017,19 @@ with mlflow.start_run(run_name="KNeighbors Regressor"):
 
     # Write to the 'score.txt' file
     with open('out/score.txt', 'a') as f:
+        f.write(" " * 30 + "\n")
         f.write(f"kneighbors_regressor\n")
+        f.write(" " * 30 + "\n")
         f.write(f"approved_conversion_mae\n")
         f.write(f"MAE: {mae_approved}\n")
         f.write(f"MSE: {mse_approved}\n")
         f.write(f"R2: {r2_approved}\n")    
+        f.write(" " * 30 + "\n")
         f.write(f"spent_on_conversion_ratio_mae\n")
         f.write(f"MAE: {mae_ratio}\n")
         f.write(f"MSE: {mse_ratio}\n")
         f.write(f"R2: {r2_ratio}\n")
+        f.write(" " * 30 + "\n")
         f.write("-" * 30 + "\n")
 
     print("File out/score.txt has been uploaded successfully.")

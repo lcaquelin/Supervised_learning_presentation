@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Documents/Pro/10-Supervised_learning/Final_project/Supervised_learning_presentation/mlruns/0/9d6e96754cc0469fad7e99e7f7d506c6/artifacts
+end_time: 1763511130776
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9d6e96754cc0469fad7e99e7f7d506c6
+run_name: Lasso Regression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763511128347
+status: 3
+tags: []
+user_id: lilid
